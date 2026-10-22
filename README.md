@@ -1,5 +1,7 @@
 # 📌 Next.js Todo App with Google Authentication & PostgreSQL (Prisma)
 
+[![CI](https://github.com/ifaizanrathore/todotestapp/actions/workflows/ci.yml/badge.svg)](https://github.com/ifaizanrathore/todotestapp/actions/workflows/ci.yml)
+
 This is a full-stack **Next.js** application that features a robust **authentication system** using **NextAuth.js**, with support for both **Google OAuth** and **credential-based login**. It uses **Prisma ORM** to manage a **PostgreSQL** database and is ideal for scalable and secure production-ready projects.
 
 ---
@@ -12,7 +14,7 @@ This is a full-stack **Next.js** application that features a robust **authentica
 - **Database:** PostgreSQL
 - **OAuth Provider:** Google
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS (optional, if used)
+- **Styling:** Tailwind CSS
 
 ---
 
@@ -29,3 +31,27 @@ POSTGRES_PRISMA_URL=postgresql://postgres:postgres@localhost:5432/postgres?conne
 
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your-secure-random-secret
+```
+
+## Run locally
+
+```bash
+git clone https://github.com/ifaizanrathore/todotestapp.git
+cd todotestapp
+npm install                 # also runs prisma generate
+npx prisma migrate deploy   # create the tables in your PostgreSQL database
+npm run seed                # optional: sample data
+npm run dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000).
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Generate the Prisma client and build for production |
+
+## License
+
+Released under the [MIT License](LICENSE).
